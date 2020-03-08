@@ -1,3 +1,3 @@
-export const func = () => {
-  return 1;
-};
+export * from "./common";
+export * from "./interfaces";
+export * from "./dynamodb.module";
