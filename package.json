@@ -21,7 +21,7 @@
   "devDependencies": {
     "@aws/dynamodb-data-mapper": "^0.7.3",
     "@commitlint/cli": "8.3.5",
-    "@commitlint/config-angular": "8.3.4",
+    "@commitlint/config-conventional": "^8.3.4",
     "@nestjs/common": "6.11.11",
     "@nestjs/core": "6.11.11",
     "@nestjs/platform-express": "6.11.11",
@@ -51,8 +51,20 @@
     "reflect-metadata": "^0.1.12",
     "@aws/dynamodb-data-mapper": "^0.7.3"
   },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -c .commitlintrc.json -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jinhokong/nestjs-dynamodb"
-  }
+  },
+  "dependencies": {}
 }
